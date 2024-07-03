@@ -52,6 +52,9 @@ export const handleLogin = expressHandler(async (req, res) => {
             _id: user._id,
             username: user.username,
             email: user.email,
+            following: user.following,
+            followers: user.followers,
+            profilePicture: user.profilePicture,
         })
 
     } else {

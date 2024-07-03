@@ -121,7 +121,7 @@ const Profile = () => {
           </div>
         </div>
 
-        <div className="px-6 md:w-[350px] ">
+        <div className="px-6 md:w-[350px] mt-4 ">
           <RightSideBar />
         </div>
 

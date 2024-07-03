@@ -23,7 +23,7 @@ const Home = () => {
               <Maintweet />
             </div>
 
-            <div className=' col-span-1 px-6  md:w-[350px] '>
+            <div className=' px-6  md:w-[350px] mt-4 '>
               <RightSideBar />
             </div>
           </div>

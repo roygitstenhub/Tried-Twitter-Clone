@@ -1,19 +1,30 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { TiHome } from "react-icons/ti";
-import { MdOutlineTag, MdPerson ,MdLogout} from "react-icons/md";
+import { MdOutlineTag, MdPerson, MdLogout } from "react-icons/md";
 import { logoutUser } from "../../redux/userSlice.js"
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const LeftSideBar = () => {
 
     const { userInfo } = useSelector((state) => state.user)
 
+    const navigate=useNavigate()
+
     const dispatch = useDispatch()
 
-    const handleLogout = (e) => {
+    const handleLogout =(e) => {
         e.preventDefault()
         dispatch(logoutUser())
+        navigate('/login')
+        // try {
+        //     // await axios.post(`http://localhost:3000/api/auth/logout`)
+        //     navigate('/login')
+        // } catch (error) {
+        //     console.log(error)
+        // }
     }
 
     return (
@@ -42,15 +53,10 @@ const LeftSideBar = () => {
                     </div>
                 </Link>
 
-
-                {/* <div className=''> */}
-                    {/* <Link to='/login'> */}
-                    <button
-                        className='flex item-center justify-center text-white bg-blue-500 px-2 py-2 gap-4 hover:bg-blue-400 rounded-full cursor-pointer'
-                        onClick={handleLogout}
-                    >Logout</button>
-                    {/* </Link> */}
-                {/* </div> */}
+                <button
+                    className='flex item-center justify-center text-white bg-blue-500 px-2 py-2 gap-4 hover:bg-blue-400 rounded-full cursor-pointer'
+                    onClick={handleLogout}
+                >Logout</button>
 
             </div>
 

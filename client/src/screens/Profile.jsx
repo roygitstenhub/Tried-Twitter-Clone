@@ -77,7 +77,7 @@ const Profile = () => {
             <img
               src={userProfile?.profilePicture}
               alt="" srcset=""
-              className=' w-24 h-24 rounded-full object-cover  '
+              className=' w-24 h-24 rounded-full object-cover border mt-3  '
             />
             {
               !userInfo ? (

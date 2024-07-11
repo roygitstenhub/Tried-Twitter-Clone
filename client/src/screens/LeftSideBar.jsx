@@ -11,11 +11,11 @@ const LeftSideBar = () => {
 
     const { userInfo } = useSelector((state) => state.user)
 
-    const navigate=useNavigate()
+    const navigate = useNavigate()
 
     const dispatch = useDispatch()
 
-    const handleLogout =(e) => {
+    const handleLogout = (e) => {
         e.preventDefault()
         dispatch(logoutUser())
         navigate('/login')
@@ -28,8 +28,8 @@ const LeftSideBar = () => {
     }
 
     return (
-        <div className='flex flex-col h-full md:h-[90vh] justify-between mr-6 sticky ' >
-            <div className='flex flex-col item-center gap-4 mt-6 ' >
+        <div className='flex  md:flex-col h-full md:h-[90vh] mr-6  w-full ' >
+            <div className='flex w-full  md:flex-col item-center gap-4 ' >
 
                 <Link to={'/'}>
                     <div className='flex item-center  px-2 py-2 gap-4 hover:bg-slate-200 rounded-full cursor-pointer' >
@@ -39,32 +39,27 @@ const LeftSideBar = () => {
                 </Link>
 
                 <Link to={'/explore'}>
-                    <div className='flex item-center px-2 py-2  gap-4 hover:bg-slate-200 rounded-full cursor-pointer'>
+                    <div className='flex item-center  px-2 py-2  gap-4 hover:bg-slate-200 rounded-full cursor-pointer'>
                         <MdOutlineTag fontSize={'22px'} />
                         <p>Explore</p>
                     </div>
                 </Link>
 
-
                 <Link to={`/profile/${userInfo._id}`}>
-                    <div className='flex item-center px-2 py-2 gap-4 hover:bg-slate-200 rounded-full cursor-pointer'>
+                    <div className='flex  md:item-center  px-2 py-2 gap-4 hover:bg-slate-200 rounded-full cursor-pointer'>
                         <MdPerson fontSize={'22px'} />
                         <p>Profile</p>
                     </div>
                 </Link>
 
                 <button
-                    className='flex item-center justify-center text-white bg-blue-500 px-2 py-2 gap-4 hover:bg-blue-400 rounded-full cursor-pointer'
+                    className='flex item-center justify-center text-white bg-blue-500 px-2 py-2 gap-4 hover:bg-blue-400 rounded-full cursor-pointer text-[14px]'
                     onClick={handleLogout}
                 >Logout</button>
 
             </div>
-
-
-
         </div>
     )
-    // className='px-4 py-1.5 bg-blue-500 text-white  rounded-full  '
 }
 
 export default LeftSideBar

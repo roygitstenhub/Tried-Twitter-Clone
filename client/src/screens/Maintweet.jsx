@@ -75,13 +75,13 @@ const Maintweet = () => {
     return (
         userInfo &&
         <div>
-            <p className='font-bold py-2'>{userInfo.username}</p>
+            <p className=' font-bold my-3 md:font-bold  '>{userInfo.username}</p>
             <form className='border-b-2 pb-2'>
                 <textarea
                     type='text'
                     maxLength={280}
                     placeholder="What's happening...."
-                    className='w-full bg-blue-100 p-2 outline-none'
+                    className='w-full bg-blue-100 p-2 outline-none rounded-md '
                     onChange={(e) => { settweetText(e.target.value) }}
                 ></textarea>
 

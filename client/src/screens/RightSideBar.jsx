@@ -28,13 +28,13 @@ const RightSideBar = () => {
 
     return (
         <div className=' bg-slate-100 rounded-lg flex flex-col gap-3 w-full p-1    '>
-            <h2 className="font-bold">Who to follow</h2>
+            <h2 className="font-bold text-left mb-2 p-2 ">Who to follow</h2>
             {
                 alluser.slice(0,visiable).map((user) => (
                     <>
                         <div className=' flex justify-between item-center px-2 gap-1 mt-1 bg-slate-50 rounded-lg ' key={user._id} >
                             <img src={user.profilePicture} alt="" className=' w-12 h-12 rounded-full object-cover  ' srcset="" />
-                            <div className='flex flex-col items-center justify-center ' >
+                            <div className='flex flex-col items-start justify-center w-full pl-2 ' >
                                 <Link to={`/profile/${user._id}`}><span className=' font-bold ' >{user.username}</span></Link>
                                 <span className=' text-slate-400 text-[12px] ' >@{user.username}</span>
                             </div>
@@ -48,7 +48,9 @@ const RightSideBar = () => {
                     </>
                 ))
             }
-                <button onClick={()=>{handleLoadMore()}} className=" text-blue-500 font-semibold  " >Load more...</button>
+            {
+                alluser.length > 3 && <button onClick={()=>{handleLoadMore()}} className=" text-blue-500 text-[14px]  py-2 " >Load more...</button>
+            }
 
         </div>
     )

@@ -18,9 +18,9 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* <div className=' w-[90%]  mx-auto px-2  md:w-[350px] flex items-center justify-center '>
+      <div className=' w-[90%]  mx-auto px-2  md:w-[350px] flex items-center justify-center '>
         <input type="text" placeholder='search' className=' md: w-full py-2 px-2 bg-blue-100 rounded-full border-none outline-none  ' />
-      </div> */}
+      </div>
     </div>
   )
 }

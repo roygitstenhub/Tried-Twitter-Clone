@@ -34,6 +34,8 @@ app.use("/api/auth",authRoutes)
 app.use("/api/user",userRoutes)
 app.use("/api/tweet",tweetRoutes)
 
+// app.use(express.static(path.join(__dirname, '/dist')))
+
 app.get("/", (req, res) => {
     res.send("you have completed your project setup.")
 })

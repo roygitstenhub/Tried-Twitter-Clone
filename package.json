@@ -8,7 +8,8 @@
     "start": "cross-env NODE_ENV=production node server/app.js ",
     "server": "cross-env NODE_ENV=development nodemon server/app.js",
     "client": "npm run dev --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build":"npm install"
   },
   "author": "",
   "license": "ISC",
